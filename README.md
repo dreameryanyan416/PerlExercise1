@@ -1,4 +1,4 @@
-#Basic Perl Exercise
+# Basic Perl Exercises
 
 •	General Introduction: ex1
 
