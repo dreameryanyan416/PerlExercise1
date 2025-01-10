@@ -6,21 +6,27 @@ the results of the subroutine to see if it worked.
 =cut
 
 sub absolute {
-    my ($number) = @_;
-    if ($number < 0) {
-        return -$number;
-    } else {
-        return $number;
+    my @final_array;
+    #checking each variables
+    foreach (@_) {
+      if($_ < 0){
+        push @final_array, -$_;
+      } 
+      else
+      {
+        push @final_array, $_;
+      }
+
     }
+   return @final_array;
 }
 
-# 定义两个变量
+# define 2 variables
 my $x = -5;
 my $y = 10;
 
-# 调用子程序 absolute 并传入变量
-my $res_x = absolute($x);
-my $res_y = absolute($y);
-# 输出结果
-print "Absolute value of $x is $res_x\n";
-print "Absolute value of $y is $res_y\n";
+# call the subroutine
+my @res_x = absolute($x, $y);
+my $result = join(",", @res_x);
+# output the result
+print "The Absolute value of $x,$y are $result";
